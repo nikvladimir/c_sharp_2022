@@ -10,14 +10,14 @@
 
 bool IsReverse(int val)
 {
-    int inp_val = val;
+    int inpValue = val;
     int reversed = 0;
     while ( val > 0 ) 
     {
       reversed = reversed * 10 + val % 10;
       val = val / 10;
     }
-    return inp_val == reversed;
+    return inpValue == reversed;
 }
 
 void ConsoleUnswer(bool val)
