@@ -10,9 +10,8 @@ string IsWeekendDay(int val)
   string no = "no";
   string exception = "there is no a week day";
 
-  if ( val < 1 | val > 7 ) return exception;
-
-  if (val == 6 | val == 7 ) return yes;
+  if (val == 6 || val == 7 ) return yes;
+  else if  ( val < 1 || val > 7 ) return exception;
   else return no;
 }
 
