@@ -9,6 +9,21 @@
 
 int[] array = { 11, 12, 15 };
 int[] array = new int[10];  // массив из 10 эл-ов заполненных нулями
+string[,] table = new string[2, 3]; // двумерный массив строки и столбцы
+table[1, 2] = "new word";
+int[,] table = new int[2, 3];  // двумерная таблица
+void PrintTable(int[,] matr)
+{
+  for (int rows = 0; rows < table.GetLength(0); rows++ )
+  {
+    for (int columns = 0; columns < table.GetLength(1); columns++ )
+    {
+      Console.Write($"{table[rows, columns]}");
+    }
+    Console.WriteLine();
+  }
+}
+
 int n = array.Length;
 int a = 1;
 a.ToString();
@@ -75,4 +90,16 @@ void DebucColor(string s)    // void функция которая ни чего
   Console.WriteLine(s);
 }
 
+// рекурсия
+int Factorial(int n)
+{
+  if (n == 1) return 1;
+  else return n * Factorial(n - 1);
+}
+
+int Fibonac(int n)
+{
+  if(n == 1 || n == 2) return 1;
+  else return Fibonac(n - 1) + Fibonac(n - 2);
+}
 // мат операции    / - целочисленное деление (// in Py)
