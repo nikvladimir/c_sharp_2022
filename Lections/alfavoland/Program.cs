@@ -14,7 +14,7 @@ table[1, 2] = "new word";
 int[,] table = new int[2, 3];  // двумерная таблица
 void PrintTable(int[,] matr)
 {
-  for (int rows = 0; rows < table.GetLength(0); rows++ )
+  for (int rows = 0; rows < table.GetLength(0); rows++ )  // for + down
   {
     for (int columns = 0; columns < table.GetLength(1); columns++ )
     {
@@ -28,13 +28,13 @@ int n = array.Length;
 int a = 1;
 a.ToString();
 
-Console.WriteLine("Enter your name:");  // next print will be from new line
+Console.WriteLine("Enter your name:");  // cw + Tab, next print will be from new line
 string username = Console.ReadLine()!;   // считывает данные с консоли, ! означает, что мы гарантируем string
 Console.Write($"Hello, {username}");    // печать без перехода на новую строку
 Console.Write(String.Format("Hello {0} and {1}!", username, a));    // печать f стринги
 
 
-double number = Convert.ToDouble(Console.ReadLine());   // int number .ToInt32
+double number = Convert.ToDouble(Console.ReadLine());   // int number .ToInt32(numb.ToString())
 double numbe2 = double.Parse(Console.ReadLine()!);   // or int.Parse, ! означает, что мы гарантируем double
 
 username.ToLower();                     // для проверки в нижнем регистре
@@ -51,7 +51,7 @@ double num1 = 3, num2 = 5;
 double sum = num1 + num2;
 double max = num1;
 
-string res = String.Empty;
+string res = String.Empty;            // объявление пустой строки
 if (max % 2 == 0) res = res + (max + " ");
 if (num1 > num2) max = num1;
 
@@ -90,6 +90,11 @@ void DebucColor(string s)    // void функция которая ни чего
   Console.WriteLine(s);
 }
 
+void PrintArray<T>(T[] array) // печать массива любого типа
+{
+  Console.WriteLine($"[{string.Join(", ", array)}]");
+}
+
 // рекурсия
 int Factorial(int n)
 {
@@ -103,3 +108,11 @@ int Fibonac(int n)
   else return Fibonac(n - 1) + Fibonac(n - 2);
 }
 // мат операции    / - целочисленное деление (// in Py)
+
+// hotckey
+// alt + up/down    - moving code strings
+// alt + left/write - navigation in IDE
+// alt + shift + up/down  - copeing corrent string
+// cw + Tab         - System.Console.WriteLine();
+// for + down + Tab - for (int i = 0; i < length; i++)
+// while + down + Tab - цикл while
