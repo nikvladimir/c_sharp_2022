@@ -12,6 +12,10 @@ int[] array = new int[10];  // массив из 10 эл-ов заполненн
 string[,] table = new string[2, 3]; // двумерный массив строки и столбцы
 table[1, 2] = "new word";
 int[,] table = new int[2, 3];  // двумерная таблица
+
+(int x, int y, int z)[] point3D = new (int, int, int)[100];
+point3D[0] = (x: 1, y: 2, z: 1);
+
 void PrintTable(int[,] matr)
 {
   for (int rows = 0; rows < table.GetLength(0); rows++ )  // for + down
@@ -27,6 +31,7 @@ void PrintTable(int[,] matr)
 int n = array.Length;
 int a = 1;
 a.ToString();
+a.Split(" ").ToArray();
 
 Console.WriteLine("Enter your name:");  // cw + Tab, next print will be from new line
 string username = Console.ReadLine()!;   // считывает данные с консоли, ! означает, что мы гарантируем string
@@ -83,6 +88,22 @@ int Max(int a, int b)
   return res;
 }
 int c = Max(1, 2);
+
+string text = "(1,2) (2,3) (4,5) (6,7)";
+
+var data = text.Replace("(", "")
+                .Replace(")", "")
+                .Split(" ")
+                .Select(item => item.Split(","))
+                .Select(e => (x: int.Parse(e[0]), y: (int.Parse(e[1]))))
+                .Select(point => (point.x * 10, point.y))
+                .ToArray();
+
+for (int i = 0; i < data.Length; i++)
+{
+    System.Console.WriteLine(data[i]);
+    // System.Console.WriteLine(data[i].x * 10);
+}
 
 void DebucColor(string s)    // void функция которая ни чего не возвращает
 {
