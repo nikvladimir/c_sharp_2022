@@ -1,25 +1,29 @@
-﻿// Задача 29
-// Напишите программу, которая задаёт массив из 8 элементов 
-// и выводит их на экран.
-// 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
-// 6, 1, 33 -> [6, 1, 33]
+﻿// Задача 38: Задайте массив вещественных чисел. Найдите разницу
+// между максимальным и минимальным элементов массива.
+// [3 7 22 2 78] -> 76
 
 
-double[] CreateArray(int length)
+int[] CreateArray(int length)
 {
-  double[] array = new double[] { };
+  int[] array = new int[length];
   for (int i = 1; i <= length; i++)
   {
-    array = array.Append(new Random().Next(0, 10)).ToArray();
+    array = array.Append(new Random().Next(100, 1000)).ToArray();
   }
   return array;
 }
 
-
-void PrintArray<T>(T[] array)
+int DiffMixMaxElem (int[] array)
 {
-  Console.WriteLine($"[{string.Join(", ", array)}]");
+  int min = array[0], max = array[0];
+  for (int i = 0; i < array.Length; i++)
+  {
+    if (array[i] < min) min = array[i];
+    if (array[i] > max) max = array[i];
+  }
+  return max - min;
 }
 
-PrintArray(CreateArray(8));
-PrintArray(CreateArray(3));
+System.Console.WriteLine(DiffMixMaxElem(CreateArray(4)));
+System.Console.WriteLine(DiffMixMaxElem(CreateArray(5)));
+System.Console.WriteLine(DiffMixMaxElem(new int[] {3, 7, 22, 2, 78}));

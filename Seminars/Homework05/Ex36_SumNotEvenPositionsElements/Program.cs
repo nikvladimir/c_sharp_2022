@@ -18,7 +18,7 @@ int SumNotEvenPositionsElements (int[] array)
   int numOfEven = 0;
   for (int i = 0; i < array.Length; i++)
   {
-    if (i % 2 != 0) numOfEven = numOfEven + array[i];
+    if (i % 2 != 0) numOfEven += array[i];
   }
   return numOfEven;
 }
