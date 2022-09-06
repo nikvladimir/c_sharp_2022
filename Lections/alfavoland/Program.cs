@@ -16,7 +16,7 @@ int[,] table = new int[2, 3];  // двумерная таблица
 (int x, int y, int z)[] point3D = new (int, int, int)[100];
 point3D[0] = (x: 1, y: 2, z: 1);
 
-void PrintTable(int[,] matr)
+void PrintTable(int[,] table)
 {
   for (int rows = 0; rows < table.GetLength(0); rows++ )  // for + down
   {
