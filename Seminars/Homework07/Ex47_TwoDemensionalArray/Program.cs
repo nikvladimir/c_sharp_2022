@@ -6,3 +6,39 @@
 // 8 7,8 -7,1 9
 
 
+int[,] CreateTable(int row, int columns)
+{
+  return new int[row, columns];
+}
+
+
+int[,] FillTableRandomVal(int[,] newTable, int fromValue, int toValue)
+{
+  for (int rows = 0; rows < newTable.GetLength(0); rows++ )
+  {
+    for (int columns = 0; columns < newTable.GetLength(1); columns++ )
+    {
+      newTable[rows, columns] = new Random().Next(fromValue, toValue);
+    }
+  }
+  return newTable;
+}
+
+
+void PrintTable(int[,] table)
+{
+  for (int rows = 0; rows < table.GetLength(0); rows++ )
+  {
+    for (int columns = 0; columns < table.GetLength(1); columns++ )
+    {
+      Console.Write($"{table[rows, columns]} ");
+    }
+    Console.WriteLine();
+  }
+}
+
+int[,] table3_4 = CreateTable(3, 4);
+PrintTable(table3_4);
+
+int[,] fillesTable3_4 = FillTableRandomVal(table3_4, -9, 9);
+PrintTable(fillesTable3_4);
