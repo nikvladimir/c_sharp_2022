@@ -116,6 +116,9 @@ void PrintArray<T>(T[] array) // печать массива любого тип
   Console.WriteLine($"[{string.Join(", ", array)}]");
 }
 
+void FillTableRandomVal(ref int[,] table, int fromValue, int toValue)  // изменяет таблицу на которую будет ссылка
+FillTableRandomVal(ref table3_4, -9, 9);                               // применение данного метода
+
 // рекурсия
 int Factorial(int n)
 {
@@ -137,3 +140,4 @@ int Fibonac(int n)
 // cw + Tab         - System.Console.WriteLine();
 // for + down + Tab - for (int i = 0; i < length; i++)
 // while + down + Tab - цикл while
+
