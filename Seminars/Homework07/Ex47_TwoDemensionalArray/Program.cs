@@ -12,16 +12,15 @@ int[,] CreateTable(int row, int columns)
 }
 
 
-int[,] FillTableRandomVal(int[,] newTable, int fromValue, int toValue)
+void FillTableRandomVal(ref int[,] table, int fromValue, int toValue)
 {
-  for (int rows = 0; rows < newTable.GetLength(0); rows++ )
+  for (int rows = 0; rows < table.GetLength(0); rows++ )
   {
-    for (int columns = 0; columns < newTable.GetLength(1); columns++ )
+    for (int columns = 0; columns < table.GetLength(1); columns++ )
     {
-      newTable[rows, columns] = new Random().Next(fromValue, toValue);
+      table[rows, columns] = new Random().Next(fromValue, toValue);
     }
   }
-  return newTable;
 }
 
 
@@ -38,7 +37,7 @@ void PrintTable(int[,] table)
 }
 
 int[,] table3_4 = CreateTable(3, 4);
-PrintTable(table3_4);
+FillTableRandomVal(ref table3_4, -9, 9);
 
-int[,] fillesTable3_4 = FillTableRandomVal(table3_4, -9, 9);
-PrintTable(fillesTable3_4);
+PrintTable(table3_4);
+PrintTable(table3_4);
